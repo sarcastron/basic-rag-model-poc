@@ -3,3 +3,4 @@
 scratch
 chromadb/*
 !chromadb/.gitkeep
+__pycache__
