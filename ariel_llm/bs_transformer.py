@@ -7,7 +7,7 @@ from langchain.schema.document import Document
 
 
 def beautiful_soup_transformer(urls: list[str]) -> List[Document]:
-    """Extract text from a website using BeautifulSoup."""
+    """Extract text from a website using Puppeteer and BeautifulSoup."""
     loader = AsyncChromiumLoader(urls)
     html_docs = loader.load()
 

@@ -1,4 +1,5 @@
 .env
 .vscode/settings.json
-chromadb
 scratch
+chromadb/*
+!chromadb/.gitkeep

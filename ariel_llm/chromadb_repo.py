@@ -1,4 +1,6 @@
 """Repo for interacting with the ChromaDB."""
+import os
+import shutil
 from langchain_chroma import Chroma
 from langchain.schema.document import Document
 from ariel_llm.embedding import get_embedding_function  # noqa
@@ -36,3 +38,9 @@ def add_to_chroma(chunks: list[Document]):
         # db.persist()
     else:
         print("✅ No new documents to add")
+
+
+def clear_database():
+    """Clear the ChromaDB data store."""
+    if os.path.exists(CHROMA_PATH):
+        shutil.rmtree(CHROMA_PATH)
