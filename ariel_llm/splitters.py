@@ -1,4 +1,5 @@
 """Splitters used to split text into smaller units."""
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 

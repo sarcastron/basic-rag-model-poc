@@ -1,4 +1,5 @@
 """Embedding functions"""
+
 from langchain_ollama import OllamaEmbeddings
 
 

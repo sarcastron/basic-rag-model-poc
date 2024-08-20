@@ -12,12 +12,12 @@ Much of the work and concepts are based on [this video tutorial](https://www.you
 ## Getting started
 
 ### 1. Install Ollama
-After installing ollama, you will need to pull some models. For this proof of concept I am using `mxbai-embed-large1` for embeddings and `mistral` for the chat model. You can pull them by running:
+After installing ollama, you will need to pull some models. For this proof of concept I am using `mxbai-embed-large` for embeddings and `llama3` for the chat model. You can pull them by running:
 
 ```sh
 # Pull the models. Make sure you have ollama running as specified for your platform
-ollama pull mxbai-embed-large1
-ollama pull mistral
+ollama pull mxbai-embed-large
+ollama pull llama3
 ```
 
 ### 2. Install deps with poetry
@@ -42,7 +42,7 @@ python cli.py ask "Is a Net Options sentiment of 35 considered good?"
 ## Next steps
 
 - [ ] Implement model testing framework.
-- [ ] Implement improved site indexing using the `sitemap.xml`. Look at using (ScrapeGraph)[https://github.com/ScrapeGraphAI/Scrapegraph-ai].
+- [X] Implement improved site indexing using the `sitemap.xml`. Look at using (ScrapeGraph)[https://github.com/ScrapeGraphAI/Scrapegraph-ai].
 - [ ] Implement a web interface.
 - [ ] Implement a vector datastore that can be distributed instead of using a local SQLite database.
 - [ ] Consider using an agent chain approach to improve the quality of the responses.
