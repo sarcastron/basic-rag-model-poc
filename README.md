@@ -17,7 +17,8 @@ After installing ollama, you will need to pull some models. For this proof of co
 ```sh
 # Pull the models. Make sure you have ollama running as specified for your platform
 ollama pull mxbai-embed-large
-ollama pull llama3
+ollama pull llama3:instruct
+
 ```
 
 ### 2. Install deps with poetry
