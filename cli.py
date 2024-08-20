@@ -4,6 +4,7 @@ import os
 from typing import Optional, List
 import typer
 from typing_extensions import Annotated
+from rich import print as r_print
 
 # Set the default user agent for fetching URLs. This can be overridden by the user.
 os.environ["USER_AGENT"] = "Ariel-llm 0.0.1"
@@ -24,9 +25,16 @@ def clear():
 def query(question: Annotated[str, typer.Option("-q")] = None):
     """Query the LLM. If a question is not provided, user will be prompted to enter a question."""
     from ariel_llm.query import query_rag
-    if question is None:
+    if question is not None:
+        query_rag(question)
+        return
+    r_print("[yellow]Entering interactive mode. Type [/yellow][magenta]`/bye`[/magenta] [yellow]to exit.[/yellow]")
+    while True:
         question = typer.prompt("Ask a question")
-    query_rag(question)
+        if question == "/bye":
+            break
+        query_rag(question)
+    r_print("Okay, bye-bye! 👋")
 
 
 @fetch_app.command("urls")

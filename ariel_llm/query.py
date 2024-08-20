@@ -41,4 +41,5 @@ def query_rag(query_text: str):
     r_print("\n\n[bold magenta]Sources: [/bold magenta]")
     for source in sources:
         r_print(f"[cyan]{source}[/cyan]")
+    print("\n\n")
     return response_text
