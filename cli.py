@@ -24,16 +24,18 @@ def clear():
 @app.command("query")
 def query(question: Annotated[str, typer.Option("-q")] = None):
     """Query the LLM. If a question is not provided, user will be prompted to enter a question."""
-    from ariel_llm.query import query_rag
+    from ariel_llm.query import query_rag, MODEL
+    r_print(f"Using model: [bold #FFA500]{MODEL}[/bold #FFA500]")
     if question is not None:
         query_rag(question)
-        return
+        raise typer.Exit()
     r_print("[yellow]Entering interactive mode. Type [/yellow][magenta]`/bye`[/magenta] [yellow]to exit.[/yellow]")
     while True:
         question = typer.prompt("Ask a question")
         if question == "/bye":
             break
         query_rag(question)
+        print("\n\n")
     r_print("Okay, bye-bye! 👋")
 
 
